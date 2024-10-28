@@ -1,11 +1,17 @@
 /* General Styles */
-body {
-  font-family: 'Overpass', sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensure padding/border don't cause overflow */
+}
+
+html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  font-family: 'Overpass', sans-serif;
   color: white;
   background-color: #1c1c1c;
-  overflow-x: hidden;
   cursor: url('assets/Cherry_Emoji.png'), auto;
 }
 
@@ -32,7 +38,6 @@ header {
 }
 
 .nav-bar-name {
-  font-family: 'Overpass', sans-serif;
   font-size: 20px;
   color: black;
   padding-left: 8px;
@@ -45,12 +50,13 @@ header {
   align-items: center;
   position: relative;
   height: 100vh;
+  width: 100%;
   overflow: hidden;
 }
 
 .background-image {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -127,7 +133,6 @@ footer {
   border: none;
   border-radius: 5px;
   font-size: 14px;
-  font-family: 'Overpass', sans-serif;
 }
 
 #mc_embed_signup input[type="email"]::placeholder {
@@ -142,8 +147,6 @@ footer {
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
-  font-family: 'Overpass', sans-serif;
-  white-space: nowrap;
 }
 
 #mc_embed_signup input.button:hover {
@@ -158,7 +161,6 @@ footer {
   padding: 10px 20px;
   font-size: 14px;
   color: white;
-  font-family: 'Overpass', sans-serif;
 }
 
 /* Footer Contact Text */
@@ -176,22 +178,23 @@ footer .inquiries a {
 @media (max-width: 768px) {
   .background-section {
     height: 100vh;
-    width: 100;
+    width: 100%; /* Ensure full width without overflow */
   }
 
   .background-image {
-    width: 100vw;
+    width: 100%; /* Switch to percentage to avoid overflow */
     height: 100%;
   }
+
   .nav-bar-name {
-      display: none; /* Hide "ISA BRUDER" on mobile */
+    display: none; /* Hide "ISA BRUDER" on mobile */
   }
 
   .icon-container {
-      top: calc(50% + 25vw); /* Position closer to main logo on mobile */
+    top: calc(50% + 25vw); /* Position closer to main logo on mobile */
   }
 
   footer .inquiries {
-      font-size: 10px;
+    font-size: 10px;
   }
 }
