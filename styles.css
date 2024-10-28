@@ -168,6 +168,9 @@ footer .inquiries {
   padding-top: 30px;
   color: white;
 }
+footer .inquiries a {
+  color: white;
+}
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
