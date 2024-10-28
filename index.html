@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISA BRUDER</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+<body>
+    <header>
+        <nav class="nav-bar">
+            <img src="assets/favicon.png" alt="favicon" class="favicon">
+            <span class="nav-bar-name">ISA BRUDER</span>
+        </nav>
+    </header>
+
+    <main>
+        <section class="background-section">
+            <img src="assets/background.jpg" alt="Background Image" class="background-image">
+            <div class="background-overlay"></div> <!-- Light overlay on top of the background image -->
+            <img src="assets/main_logo.png" alt="Isa Bruder Logo" class="main-logo">
+            <div class="icon-container">
+                <img src="assets/deezer.png" alt="Icon 1" class="social-icon">
+                <!-- Add other social icons here -->
+            </div>
+        </section>
+        
+        <section id="subscribe-section">
+            <div id="mc_embed_signup">
+                <form action="https://isabruder.us12.list-manage.com/subscribe/post?u=6811eeb92a8f9ed876b39dd07&amp;id=a71a77e3d2&amp;f_id=0090a3e0f0" 
+                      method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self" novalidate="">
+                    <div id="mc_embed_signup_scroll">
+                        <h2>Stay updated!</h2>
+                        <div class="mc-field-group-container">
+                            <div class="mc-field-group">
+                                <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" placeholder="Your email" required="">
+                            </div>
+                            <div class="mc-button-group">
+                                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Sign Up">
+                            </div>
+                        </div>
+                        <p id="error-message" class="error" style="display:none; color:#8B0000; text-align:center; font-size: 14px;">Please enter a valid email address.</p>
+                        <div id="mce-responses" class="clear foot">
+                            <div class="response" id="mce-error-response" style="display:none;"></div>
+                            <div class="response" id="mce-success-response" style="display:none;"></div>
+                        </div>
+                        <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                            <input type="text" name="b_6811eeb92a8f9ed876b39dd07_a71a77e3d2" tabindex="-1" value="">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div id="thank-you-message" style="display: none;">
+            <h1>🍒 Thank You for Subscribing! 🍒</h1>
+            <p>Stay tuned for updates soon!</p>
+        </div>
+        <p class="inquiries">Please direct all inquiries to press@isabruder.com</p>
+    </footer>
+
+    <script>
+        document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('mce-EMAIL').value;
+            var errorMessage = document.getElementById('error-message');
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                document.getElementById('subscribe-section').style.display = 'none';
+                document.getElementById('thank-you-message').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>
