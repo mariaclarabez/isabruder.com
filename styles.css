@@ -2,13 +2,13 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box; /* Ensure padding/border don't cause overflow */
+  box-sizing: border-box;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
   font-family: 'Overpass', sans-serif;
   color: white;
   background-color: #1c1c1c;
@@ -80,14 +80,21 @@ header {
   z-index: 2;
 }
 
-/* Social Icon Container */
-.icon-container {
+/* New container for icons and button */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Adjust spacing between icons and button */
   position: absolute;
+  top: calc(50% + 12vw);
+  z-index: 2;
+}
+
+.icon-container {
   display: flex;
   justify-content: center;
-  top: calc(50% + 12vw);
   gap: 1vw;
-  z-index: 2;
 }
 
 .social-icon {
@@ -96,13 +103,30 @@ header {
   border-radius: 50%;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #1c1c1c;
+/* Pre-Save Button */
+.presave-button-container {
+  display: flex;
+  justify-content: center;
 }
 
+.presave-button {
+  background-color: #8B0000;
+  color: white;
+  padding: 10px 10px;
+  border-radius: 5px;
+  font-size: 10px;
+  /* font-weight: 600; */
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s;
+  max-width: 180px;
+}
+
+.presave-button:hover {
+  background-color: #a83232;
+}
+
+/* Subscribe Section */
 #mc_embed_signup {
   background-color: #1c1c1c;
   padding: 40px 20px;
@@ -169,6 +193,7 @@ footer .inquiries {
   font-size: 12px;
   padding-top: 30px;
   color: white;
+  text-align: center; /* Center the text */
 }
 footer .inquiries a {
   color: white;
@@ -190,11 +215,12 @@ footer .inquiries a {
     display: none; /* Hide "ISA BRUDER" on mobile */
   }
 
-  .icon-container {
-    top: calc(50% + 25vw); /* Position closer to main logo on mobile */
+  .content-container {
+    top: calc(50% + 25vw);
   }
 
   footer .inquiries {
     font-size: 10px;
+    text-align:center;
   }
 }
