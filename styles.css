@@ -216,6 +216,20 @@ footer .inquiries a {
   font-size: 14px;
 }
 
+.cherry {
+  position: absolute;
+  font-size: 24px;
+  top: -50px; /* Start above the viewport */
+  animation: fall 2.5s linear forwards; /* Apply fall animation */
+}
+
+/* Keyframes for the falling animation */
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+  }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .background-section {
