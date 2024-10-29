@@ -50,6 +50,7 @@
                 </div>
             </div>
         </section>
+
         
         <section id="subscribe-section">
             <div id="mc_embed_signup">
@@ -86,6 +87,20 @@
         </div>
         <p class="inquiries">Please direct all inquiries to <a href="mailto:press@isabruder.com">press@isabruder.com</a></p>
     </footer>
-<script src="script.js"></script>
+    <script>
+        document.getElementById('mc-embedded-subscribe-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var email = document.getElementById('mce-EMAIL').value;
+            var errorMessage = document.getElementById('error-message');
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+                document.getElementById('subscribe-section').style.display = 'none';
+                document.getElementById('thank-you-message').style.display = 'block';
+            }
+        });
+    </script>
 </body>
 </html>
