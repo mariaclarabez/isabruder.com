@@ -18,7 +18,7 @@ function cherryRain() {
     setTimeout(() => {
         clearInterval(cherryInterval);
         document.body.style.overflow = ''; // Restore scrolling after animation
-    }, 7000); // Stop after 7 seconds
+    }, 4000); // Stop after 4 seconds
 }
 
 // Subscribe Form Validation
