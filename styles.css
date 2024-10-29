@@ -208,6 +208,14 @@ footer .inquiries a {
   padding: 20px;
 }
 
+.subscribe-thank-you {
+  font-size: 18px;
+}
+
+.stay-tuned {
+  font-size: 14px;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .background-section {
