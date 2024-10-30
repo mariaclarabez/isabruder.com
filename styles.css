@@ -5,11 +5,14 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden !important; /* Force-disable horizontal scrolling */
-  max-width: 100vw; /* Limit max width to viewport */
+  overflow-x: hidden !important;
+  /* Force-disable horizontal scrolling */
+  max-width: 100vw;
+  /* Limit max width to viewport */
   font-family: 'Overpass', sans-serif;
   color: white;
   background-color: #1c1c1c;
@@ -51,7 +54,8 @@ header {
   align-items: center;
   position: relative;
   height: 100vh;
-  width: 100vw; /* Constrain width to viewport */
+  width: 100vw;
+  /* Constrain width to viewport */
   overflow: hidden;
 }
 
@@ -81,6 +85,30 @@ header {
   z-index: 2;
 }
 
+/* Keyframe Animation for Falling Cherries */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Style for Cherry Elements */
+.cherry {
+  position: absolute;
+  top: -50px;
+  font-size: 24px;
+  animation: fall 2.5s linear infinite;
+  opacity: 0.8;
+  pointer-events: none;
+  /* Ensures cherries don't interfere with clicks */
+}
+
 /* New container for icons and button */
 .content-container {
   display: flex;
@@ -90,7 +118,8 @@ header {
   position: absolute;
   top: calc(50% + 12vw);
   z-index: 2;
-  width: 100vw; /* Limit width to viewport */
+  width: 100vw;
+  /* Limit width to viewport */
 }
 
 .icon-container {
@@ -196,6 +225,7 @@ footer .inquiries {
   color: white;
   text-align: center;
 }
+
 footer .inquiries a {
   color: white;
 }
@@ -221,7 +251,8 @@ footer .inquiries a {
 @media (max-width: 768px) {
   .background-section {
     height: 100vh;
-    width: 100vw; /* Ensure full width without overflow */
+    width: 100vw;
+    /* Ensure full width without overflow */
   }
 
   .background-image {
@@ -230,7 +261,8 @@ footer .inquiries a {
   }
 
   .nav-bar-name {
-    display: none; /* Hide "ISA BRUDER" on mobile */
+    display: none;
+    /* Hide "ISA BRUDER" on mobile */
   }
 
   .content-container {
