@@ -129,32 +129,33 @@
             }
         });
 
-        // Cherry animation script commented out
-        /*
         function createCherry() {
-            const cherry = document.createElement('div');
-            cherry.textContent = '🍒';
-            cherry.classList.add('cherry');
-            cherry.style.left = `${Math.random() * 100}vw`;
-            cherry.style.animationDuration = `${Math.random() * 1.5 + 2}s`;
+        const cherry = document.createElement('div');
+        cherry.textContent = '🍒';
+        cherry.classList.add('cherry');
 
-            document.body.appendChild(cherry);
+        // Set random horizontal position and fall duration
+        cherry.style.left = `${Math.random() * 100}vw`;
+        const fallDuration = Math.random() * 1.5 + 2; // Random fall duration between 2s and 3.5s
+        cherry.style.animationDuration = `${fallDuration}s`;
 
-            cherry.addEventListener('animationend', () => cherry.remove());
+        document.body.appendChild(cherry);
+
+        // Remove cherry after it has fallen completely
+        setTimeout(() => cherry.remove(), fallDuration * 1000);
+    }
+
+    function cherryRain() {
+        const cherryCount = 50; // Fixed number of cherries to generate
+
+        for (let i = 0; i < cherryCount; i++) {
+            setTimeout(createCherry, i * 100); // Stagger creation by 100ms for a rain effect
         }
+    }
 
-        function cherryRain() {
-            const cherryInterval = setInterval(createCherry, 100);
-
-            setTimeout(() => {
-                clearInterval(cherryInterval);
-                const cherries = document.querySelectorAll('.cherry');
-                cherries.forEach(cherry => cherry.remove());
-            }, 4000);
-        }
-
-        window.addEventListener('load', cherryRain);
-        */
+    // Trigger cherry rain on page load
+    window.addEventListener('load', cherryRain);
+    
     </script>
 </body>
 
