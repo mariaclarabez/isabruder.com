@@ -23,6 +23,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16-v1.png">
     <link rel="manifest" href="/site.webmanifest">
     <!-- <link rel="icon" href="assets/favicon.png" type="image/png"> -->
+
+    <style>
+        /* Media query for mobile screens */
+        @media (max-width: 768px) {
+            .background-image {
+                content: url('assets/background-v3-mobile.jpg');
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -56,9 +65,12 @@
                     <a href="https://www.deezer.com/us/artist/98240852" target="_blank"><img
                             src="assets/deezer-64x64-v1.png" alt="Deezer" class="social-icon"></a>
                 </div>
+                <div class="presave-button-container">
+                    <a href="https://awal.ffm.to/mitdt" target="_blank" class="presave-button">PRE-SAVE MY UPCOMING
+                        SINGLE</a>
+                </div>
             </div>
         </section>
-
 
         <section id="subscribe-section">
             <div id="mc_embed_signup">
@@ -116,37 +128,34 @@
                 document.getElementById('thank-you-message').style.display = 'block';
             }
         });
+
+        // Cherry animation script commented out
+        /*
+        function createCherry() {
+            const cherry = document.createElement('div');
+            cherry.textContent = '🍒';
+            cherry.classList.add('cherry');
+            cherry.style.left = `${Math.random() * 100}vw`;
+            cherry.style.animationDuration = `${Math.random() * 1.5 + 2}s`;
+
+            document.body.appendChild(cherry);
+
+            cherry.addEventListener('animationend', () => cherry.remove());
+        }
+
+        function cherryRain() {
+            const cherryInterval = setInterval(createCherry, 100);
+
+            setTimeout(() => {
+                clearInterval(cherryInterval);
+                const cherries = document.querySelectorAll('.cherry');
+                cherries.forEach(cherry => cherry.remove());
+            }, 4000);
+        }
+
+        window.addEventListener('load', cherryRain);
+        */
     </script>
-<script>
-    function createCherry() {
-        const cherry = document.createElement('div');
-        cherry.textContent = '🍒';
-        cherry.classList.add('cherry');
-        cherry.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-        cherry.style.animationDuration = `${Math.random() * 1.5 + 2}s`; // Random fall duration
-
-        document.body.appendChild(cherry);
-
-        // Remove cherry after animation ends
-        cherry.addEventListener('animationend', () => cherry.remove());
-    }
-
-    function cherryRain() {
-        const cherryInterval = setInterval(createCherry, 100); // Create a cherry every 100ms
-
-        // Stop creating cherries after 3 seconds
-        setTimeout(() => {
-            clearInterval(cherryInterval); // Stop creating new cherries
-
-            // Remove all existing cherries
-            const cherries = document.querySelectorAll('.cherry');
-            cherries.forEach(cherry => cherry.remove());
-        }, 4000); // Stop after 4 seconds
-    }
-
-    // Trigger cherry rain on page load
-    window.addEventListener('load', cherryRain);
-</script>
 </body>
 
 </html>
